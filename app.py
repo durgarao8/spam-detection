@@ -18,36 +18,61 @@ def set_bg():
     st.markdown(
         """
         <style>
+
+        /* Main animated background */
         .stApp {
-            background-image: url("https://images.unsplash.com/photo-1550751827-4bd374c3f58b");
-            background-size: cover;
-            background-attachment: fixed;
+            background: linear-gradient(-45deg,#021B3A,#043C7A,#0A2A5A,#021433);
+            background-size: 400% 400%;
+            animation: gradientBG 12s ease infinite;
         }
 
+        /* Background animation */
+        @keyframes gradientBG {
+            0% {background-position:0% 50%}
+            50% {background-position:100% 50%}
+            100% {background-position:0% 50%}
+        }
+
+        /* White border frame around page */
+        .block-container {
+            border: 2px solid white;
+            border-radius: 15px;
+            padding: 40px;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(8px);
+        }
+
+        /* Main content box */
         .main-box{
-            background-color: rgba(0,0,0,0.75);
+            background: rgba(0,0,0,0.65);
             padding:40px;
             border-radius:15px;
+            border:1px solid white;
         }
 
+        /* Title styling */
         .title{
             text-align:center;
             color:#00e5ff;
             font-size:40px;
             font-weight:bold;
+            text-shadow:0px 0px 12px #00e5ff;
         }
 
+        /* Subtitle */
         .subtitle{
             text-align:center;
             color:white;
             margin-bottom:20px;
         }
 
+        /* Footer */
         .footer{
             text-align:center;
-            color:gray;
+            color:#cfd8ff;
             margin-top:30px;
         }
+
         </style>
         """,
         unsafe_allow_html=True
